@@ -1,111 +1,333 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Línea de Tiempo - Comunicación Técnica</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <title>Línea de Tiempo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<header>
-    <h1>Mi Línea de Tiempo de Aprendizaje Técnico</h1>
-    <p>Comunicación y Redacción - Ciclo II</p>
-</header>
+    <div id="particles"></div>
 
-<div class="timeline">
+    <div id="progressBar"></div>
 
-    <div class="container left">
-        <div class="content">
-            <h2>2025</h2>
-            <h3>Primer contacto con manuales</h3>
+    <button id="themeButton">
+        <i class="fa-solid fa-moon"></i>
+    </button>
 
-            <p><strong>Lenguaje:</strong> Escrito y técnico.</p>
+    <button id="topButton">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-            <p><strong>Texto:</strong> Manual de programación.</p>
+    <header>
 
-            <p><strong>Claridad:</strong> Media.</p>
+        <h1>Mi Línea de Tiempo de Aprendizaje Técnico</h1>
 
-            <p><strong>Impacto:</strong> Aprendí la estructura básica de un programa y cómo seguir instrucciones correctamente.</p>
+        <p>
+            Comunicación y Redacción • Ingeniería en Desarrollo de Software
+        </p>
+
+    </header>
+
+    <section class="timeline">
+
+        <article class="timeline-item left">
+
+            <div class="timeline-icon">
+
+                <i class="fa-solid fa-book"></i>
+
+            </div>
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    Primer Ciclo
+                </span>
+
+                <h2>
+                    Primer contacto con manuales de programación
+                </h2>
+
+                <p>
+                    Aprendí la importancia de leer documentación técnica para comprender
+                    la estructura de un programa y seguir instrucciones correctamente.
+                </p>
+
+                <button class="more"
+                    data-title="Primer contacto con manuales"
+                    data-description="
+                    Tipo de lenguaje: Escrito y técnico.
+
+                    Tipo de texto: Manual de programación.
+
+                    Claridad: Media.
+
+                    Impacto:
+                    Aprendí a interpretar documentación técnica y comprender
+                    conceptos básicos de programación.
+                    ">
+
+                    Ver más
+
+                </button>
+
+            </div>
+
+        </article>
+
+        <article class="timeline-item right">
+
+            <div class="timeline-icon">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+            </div>
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    Programación I
+                </span>
+
+                <h2>
+                    Clases presenciales
+                </h2>
+
+                <p>
+                    Las explicaciones del docente me ayudaron a comprender la lógica
+                    de programación mediante ejercicios prácticos.
+                </p>
+
+                <button class="more"
+                    data-title="Clases de Programación I"
+                    data-description="
+                    Tipo de lenguaje: Oral y técnico.
+
+                    Tipo de texto: Explicación oral.
+
+                    Claridad: Alta.
+
+                    Impacto:
+                    Comprendí mejor los fundamentos gracias a los ejemplos vistos
+                    en clase.
+                    ">
+
+                    Ver más
+
+                </button>
+
+            </div>
+
+        </article>
+
+        <article class="timeline-item left">
+
+            <div class="timeline-icon">
+
+                <i class="fa-brands fa-youtube"></i>
+
+            </div>
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    Tutoriales
+                </span>
+
+                <h2>
+                    Aprendizaje con videos
+                </h2>
+
+                <p>
+                    Utilicé YouTube para reforzar conocimientos y resolver dudas
+                    mientras desarrollaba tareas.
+                </p>
+
+                <button class="more"
+                    data-title="Tutoriales en video"
+                    data-description="
+                    Tipo de lenguaje: Audiovisual.
+
+                    Tipo de texto: Tutorial.
+
+                    Claridad: Alta.
+
+                    Impacto:
+                    Me permitió aprender a mi ritmo y practicar cada tema.
+                    ">
+
+                    Ver más
+
+                </button>
+
+            </div>
+
+        </article>
+
+        <article class="timeline-item right">
+
+            <div class="timeline-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    Proyecto Web
+                </span>
+
+                <h2>
+                    Documentación de Django
+                </h2>
+
+                <p>
+                    Consulté la documentación oficial para aprender las bases
+                    del framework durante un proyecto universitario.
+                </p>
+
+                <button class="more"
+                    data-title="Documentación de Django"
+                    data-description="
+                    Tipo de lenguaje: Escrito y técnico.
+
+                    Tipo de texto: Documentación oficial.
+
+                    Claridad: Media.
+
+                    Impacto:
+                    Aprendí a buscar información específica y aplicar ejemplos
+                    directamente en el proyecto.
+                    ">
+
+                    Ver más
+
+                </button>
+
+            </div>
+
+        </article>
+
+        <article class="timeline-item left">
+
+            <div class="timeline-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    Trabajo en Equipo
+                </span>
+
+                <h2>
+                    Comunicación con compañeros
+                </h2>
+
+                <p>
+                    Compartimos ideas y soluciones para resolver problemas
+                    durante el desarrollo del proyecto.
+                </p>
+
+                <button class="more"
+                    data-title="Trabajo colaborativo"
+                    data-description="
+                    Tipo de lenguaje: Oral y escrito.
+
+                    Tipo de texto: Conversaciones y mensajes.
+
+                    Claridad: Alta.
+
+                    Impacto:
+                    Aprendí nuevas formas de resolver problemas y comunicar ideas.
+                    ">
+
+                    Ver más
+
+                </button>
+
+            </div>
+
+        </article>
+        <article class="timeline-item right">
+
+            <div class="timeline-icon">
+
+                <i class="fa-solid fa-database"></i>
+
+            </div>
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    Segundo Ciclo
+                </span>
+
+                <h2>
+                    APIs y Bases de Datos
+                </h2>
+
+                <p>
+                    Aprendí a utilizar documentación técnica para conectar
+                    aplicaciones con bases de datos y servicios.
+                </p>
+
+                <button class="more"
+                    data-title="Documentación de APIs"
+                    data-description="
+                    Tipo de lenguaje: Escrito y técnico.
+
+                    Tipo de texto: Documentación técnica.
+
+                    Claridad: Media.
+
+                    Impacto:
+                    Comprendí cómo interpretar documentación profesional.
+                    ">
+
+                    Ver más
+
+                </button>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span id="closeModal">&times;</span>
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalDescription"></p>
+
         </div>
+
     </div>
 
-    <div class="container right">
-        <div class="content">
-            <h2>2025</h2>
-            <h3>Clases de Programación I</h3>
-
-            <p><strong>Lenguaje:</strong> Oral y técnico.</p>
-
-            <p><strong>Texto:</strong> Explicación del docente.</p>
-
-            <p><strong>Claridad:</strong> Alta.</p>
-
-            <p><strong>Impacto:</strong> Comprendí mejor la lógica de programación gracias a los ejemplos realizados en clase.</p>
-        </div>
-    </div>
-
-    <div class="container left">
-        <div class="content">
-            <h2>2025</h2>
-            <h3>Tutoriales en YouTube</h3>
-
-            <p><strong>Lenguaje:</strong> Audiovisual.</p>
-
-            <p><strong>Texto:</strong> Tutorial.</p>
-
-            <p><strong>Claridad:</strong> Alta.</p>
-
-            <p><strong>Impacto:</strong> Reforcé los conocimientos vistos en clase y resolví dudas durante las tareas.</p>
-        </div>
-    </div>
-
-    <div class="container right">
-        <div class="content">
-            <h2>2026</h2>
-            <h3>Documentación de Django</h3>
-
-            <p><strong>Lenguaje:</strong> Escrito y técnico.</p>
-
-            <p><strong>Texto:</strong> Documentación oficial.</p>
-
-            <p><strong>Claridad:</strong> Media.</p>
-
-            <p><strong>Impacto:</strong> Aprendí a buscar información específica y aplicar ejemplos al desarrollo de un proyecto web.</p>
-        </div>
-    </div>
-
-    <div class="container left">
-        <div class="content">
-            <h2>2026</h2>
-            <h3>Trabajo en equipo</h3>
-
-            <p><strong>Lenguaje:</strong> Oral y escrito.</p>
-
-            <p><strong>Texto:</strong> Explicaciones y mensajes.</p>
-
-            <p><strong>Claridad:</strong> Alta.</p>
-
-            <p><strong>Impacto:</strong> Compartir ideas con mis compañeros fortaleció mi comprensión de distintos temas técnicos.</p>
-        </div>
-    </div>
-
-    <div class="container right">
-        <div class="content">
-            <h2>2026</h2>
-            <h3>Documentación de APIs</h3>
-
-            <p><strong>Lenguaje:</strong> Escrito y técnico.</p>
-
-            <p><strong>Texto:</strong> Documentación técnica.</p>
-
-            <p><strong>Claridad:</strong> Media.</p>
-
-            <p><strong>Impacto:</strong> Comprendí cómo interpretar documentación para integrar aplicaciones con bases de datos y servicios.</p>
-        </div>
-    </div>
-
-</div>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
