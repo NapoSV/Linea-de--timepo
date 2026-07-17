@@ -1,1 +1,9 @@
-console.log("Línea de tiempo cargada correctamente.");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.container').forEach(card => observer.observe(card));

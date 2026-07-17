@@ -1,107 +1,164 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background:#f4f7fb;
+body {
+    background: #f4f7fb;
 }
 
-header{
-    text-align:center;
-    padding:40px;
-    background:#1b4f72;
-    color:white;
+/* ── Header ── */
+header {
+    text-align: center;
+    padding: 40px;
+    background: #1b4f72;
+    color: white;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: headerEntrance 0.8s ease forwards;
 }
 
-.timeline{
-    position:relative;
-    max-width:1200px;
-    margin:50px auto;
+@keyframes headerEntrance {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.timeline::after{
-    content:'';
-    position:absolute;
-    width:6px;
-    background:#1b4f72;
-    top:0;
-    bottom:0;
-    left:50%;
-    margin-left:-3px;
+/* ── Timeline container ── */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
 }
 
-.container{
-    padding:10px 40px;
-    position:relative;
-    width:50%;
+/* Línea central — crece de arriba hacia abajo */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: #1b4f72;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    transform-origin: top;
+    transform: scaleY(0);
+    animation: lineGrow 1.2s ease 0.4s forwards;
 }
 
-.left{
-    left:0;
+@keyframes lineGrow {
+    to {
+        transform: scaleY(1);
+    }
 }
 
-.right{
-    left:50%;
+/* ── Cards ── */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+
+    /* Estado inicial para la animación de scroll */
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.container::after{
-    content:'';
-    position:absolute;
-    width:25px;
-    height:25px;
-    right:-17px;
-    background:white;
-    border:4px solid #1b4f72;
-    top:20px;
-    border-radius:50%;
-    z-index:1;
+.left {
+    left: 0;
+    transform: translateX(-60px);
 }
 
-.right::after{
-    left:-16px;
+.right {
+    left: 50%;
+    transform: translateX(60px);
 }
 
-.content{
-    padding:20px;
-    background:white;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+/* Clase que agrega el JS al hacer scroll */
+.container.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.content h2{
-    color:#1b4f72;
-    margin-bottom:10px;
+/* ── Dots del timeline ── */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background: white;
+    border: 4px solid #1b4f72;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 2s ease-in-out infinite;
 }
 
-.content h3{
-    margin-bottom:15px;
+.right::after {
+    left: -16px;
+    right: auto;
 }
 
-.content p{
-    margin:8px 0;
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(27, 79, 114, 0.5); }
+    70%  { box-shadow: 0 0 0 10px rgba(27, 79, 114, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(27, 79, 114, 0); }
 }
 
-@media(max-width:768px){
-
-.timeline::after{
-left:30px;
+/* ── Content cards ── */
+.content {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container{
-width:100%;
-padding-left:70px;
-padding-right:25px;
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(27, 79, 114, 0.25);
 }
 
-.container::after{
-left:15px;
+.content h2 {
+    color: #1b4f72;
+    margin-bottom: 10px;
 }
 
-.right{
-left:0;
+.content h3 {
+    margin-bottom: 15px;
 }
 
+.content p {
+    margin: 8px 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 30px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        transform: translateX(-40px);
+    }
+
+    .right {
+        left: 0;
+        transform: translateX(-40px);
+    }
+
+    .container.visible {
+        transform: translateX(0);
+    }
+
+    .container::after {
+        left: 15px;
+        right: auto;
+    }
 }
